@@ -37,7 +37,7 @@ g() // does not wait for f to return
 
 An example of how running concurrent flows of execution is made easy to use with the go keyword before the function call. They are lighter and cheaper than threads.
 
-[Here](coroutine-example.go) is a link to a full program demonstrating use of goroutines.
+[Here](coroutines-example.go) is a link to a full program demonstrating use of goroutines.
 
 ---
 ### **Channels**
@@ -59,7 +59,7 @@ completedAt := <-timerChan
 
 Go also supports buffered channels, where the capacity of the channel can be defined based on the requirement.
 
-[Here](channel-example.go) is the link to a full program to demonstrate use of channels.
+[Here](channels-example.go) is the link to a full program to demonstrate use of channels.
 
 ---
 ### **Select**
