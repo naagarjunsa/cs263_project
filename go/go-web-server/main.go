@@ -33,7 +33,7 @@ func main() {
 func handleConnection(w http.ResponseWriter, url string) {
 	// add 2 second delay to every 10th request
 	if url == "/cpu" {
-		time.Sleep(2 * time.Second)
+		go time.Sleep(2 * time.Second)
 		w.Header().Add("Connection", "keep-alive")
 		w.WriteHeader(200)
 		fmt.Fprintf(w, "CPU Intensive Task Done!")
