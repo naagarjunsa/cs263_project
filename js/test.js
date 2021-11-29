@@ -7,10 +7,10 @@ function sleep(ms) {
     });
   }
 
-const requestListener = async function (req, res, flag) {
+const requestListener = async function (request, response, flag) {
     
     if (flag) {
-        await sleep(2000);
+        await sleep(1000);
         response.writeHead(200, {
             'Content-Type': 'text/plain'
         });
@@ -19,9 +19,9 @@ const requestListener = async function (req, res, flag) {
     }
     else {
         const contents = await fs.readFile(__dirname + "/hello.html");
-        res.setHeader("Connection", "keep-alive");
-        res.writeHead(200); 
-        res.end(contents);
+        response.setHeader("Connection", "keep-alive");
+        response.writeHead(200); 
+        response.end(contents);
     }
 };
 
