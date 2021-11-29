@@ -10,7 +10,7 @@ function sleep(ms) {
 const requestListener = async function (request, response, flag) {
     
     if (flag) {
-        await sleep(1000);
+        await sleep(250);
         response.writeHead(200, {
             'Content-Type': 'text/plain'
         });
