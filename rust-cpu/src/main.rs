@@ -1,11 +1,11 @@
 use warp::Filter;
 use std::time::Duration;
-use async_std::task;
+use std::thread::sleep;
 
 #[tokio::main]
 async fn main() {
     let routes = warp::any().map(|| {     
-        task::sleep(Duration::from_secs(0.25)).await;
+        sleep(Duration::from_secs(1));
         return "CPU Intensive task done!"});
 
     warp::serve(routes)
